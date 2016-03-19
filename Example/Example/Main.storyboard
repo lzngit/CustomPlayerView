@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bkO-no-mPP">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EqS-7n-t2C">
+            <objects>
+                <viewController id="bkO-no-mPP" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a4o-9b-bRa"/>
+                        <viewControllerLayoutGuide type="bottom" id="NMV-Zz-VvO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9HV-tg-1Or">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyo-97-5b8" customClass="ZNPlayerView">
+                                <rect key="frame" x="40" y="60" width="520" height="200"/>
+                                <color key="backgroundColor" red="1" green="0.6705882353" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Jgt-gx-G2r"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCO-UD-2lP">
+                                <rect key="frame" x="0.0" y="348" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="MIj-El-WXu"/>
+                                </constraints>
+                                <state key="normal" title="播放本地 url"/>
+                                <connections>
+                                    <action selector="playLocalUrl:" destination="bkO-no-mPP" eventType="touchUpInside" id="FMv-39-heg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjy-Xa-a9b">
+                                <rect key="frame" x="300" y="348" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="G9E-n7-j49"/>
+                                </constraints>
+                                <state key="normal" title="播放网络 url"/>
+                                <connections>
+                                    <action selector="playNetUrl:" destination="bkO-no-mPP" eventType="touchUpInside" id="96S-Ag-ESl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wjy-Xa-a9b" firstAttribute="width" secondItem="xCO-UD-2lP" secondAttribute="width" id="2jR-jR-UbN"/>
+                            <constraint firstItem="xCO-UD-2lP" firstAttribute="leading" secondItem="9HV-tg-1Or" secondAttribute="leading" id="3pS-nw-PrD"/>
+                            <constraint firstItem="lyo-97-5b8" firstAttribute="top" secondItem="a4o-9b-bRa" secondAttribute="bottom" constant="40" id="899-lr-d7x"/>
+                            <constraint firstItem="Wjy-Xa-a9b" firstAttribute="leading" secondItem="xCO-UD-2lP" secondAttribute="trailing" id="D3e-rM-7j3"/>
+                            <constraint firstItem="xCO-UD-2lP" firstAttribute="top" secondItem="lyo-97-5b8" secondAttribute="bottom" constant="88" id="Gkh-y4-ZmO"/>
+                            <constraint firstAttribute="trailing" secondItem="Wjy-Xa-a9b" secondAttribute="trailing" id="Npm-1Q-xwT"/>
+                            <constraint firstAttribute="trailing" secondItem="lyo-97-5b8" secondAttribute="trailing" constant="40" id="Saa-OS-fa8"/>
+                            <constraint firstItem="lyo-97-5b8" firstAttribute="leading" secondItem="9HV-tg-1Or" secondAttribute="leading" constant="40" id="XL2-hh-54b"/>
+                            <constraint firstItem="Wjy-Xa-a9b" firstAttribute="top" secondItem="lyo-97-5b8" secondAttribute="bottom" constant="88" id="qH1-iw-xjp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playerView" destination="lyo-97-5b8" id="RvM-EM-0CI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lHJ-YA-mkT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168" y="189"/>
+        </scene>
+    </scenes>
+</document>
